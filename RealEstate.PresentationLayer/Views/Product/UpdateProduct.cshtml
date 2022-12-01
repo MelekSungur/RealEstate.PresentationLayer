@@ -1,0 +1,27 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<h1>UpdateProduct</h1>
+
+<form method="post" style="margin-left:50px">
+    <input type="hidden" asp-for="ProductID" />
+    <label>İlan Başlığı</label>
+    <input type="text" asp-for="ProductTitle" class="form-control" />
+    <br />
+    <label>İlan Açıklaması</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    <br />
+    <label>İlan Fiyatı</label>
+    <input type="text" asp-for="Price" class="form-control" />
+    <br />
+    <label>İlan Kategorisi</label>
+    <input type="text" asp-for="Category" class="form-control" />
+
+    <br />
+    <button class="btn btn-info">İlanı Kaydet</button>
+
+</form>

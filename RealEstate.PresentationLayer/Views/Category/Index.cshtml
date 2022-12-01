@@ -1,0 +1,33 @@
+﻿@model List<RealEstate.EntityLayer.Concrete.Category>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<h4>Index</h4>
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Kategori Adı</th>
+            <th>Sil</th>
+            <th>Düzenle</th>
+            <th>İlanlar</th>
+            <th>Durum</th>
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CategoryID</td>
+                <td>@item.CategoryName</td>
+                <td><a href="/Category/DeleteMember/@item.CategoryID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Category/UpdateMember/@item.CategoryID" class="btn btn-success">Güncelle</a></td>
+                <td><a href="#" class="btn btn-outline-dark">İlanlar</a></td>
+                <td><a href="#" class="btn btn-outline-danger">Durum</a></td>
+            </tr>
+        }
+</div>
+
+</table>
